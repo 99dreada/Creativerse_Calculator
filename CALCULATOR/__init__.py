@@ -21,8 +21,11 @@ def config_login():
 
 config_db()
 config_login()
+"""
+
 from CALCULATOR import routes
 
+"""
 #init the flask commands#
 
 db_cli = AppGroup('db')
