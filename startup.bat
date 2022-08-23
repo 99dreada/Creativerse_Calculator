@@ -5,10 +5,10 @@ call "venv/Scripts/activate.bat"
 :begin
 CLS
 ECHO 1.Full Setup (Run this if first time setup ONLY)
-ECHO 2.Install requirements
-ECHO 3.Build DB
-ECHO 4.Run Application
-ECHO 5.Setup Enviroment
+ECHO 2.Install requirements DNU
+ECHO 3.Build DB DNU
+ECHO 4.Run Application DNU
+ECHO 5.Setup Enviroment DNU
 ECHO.
 CHOICE /C 12345 /M "Enter your choice:"
 
@@ -21,7 +21,7 @@ IF ERRORLEVEL 1 GOTO Fullsetup
 :Envsetup
 ECHO Setting up enviroment
 set FLASK_APP=CALCULATOR
-set FLASK_DEBUG=development
+set FLASK_DEBUG=1
 
 :Fullsetup
 ECHO Installing pip
@@ -29,13 +29,13 @@ py -m pip install --upgrade pip
 ECHO Installing venv
 py -m pip install --user virtualenv
 ECHO Creating venv
-py -m venv env
+py -m venv venv
 ECHO Starting enviroment
-.\env\Scripts\activate
+.\venv\Scripts\activate
 Echo Installing dependancy
 pip install -r requirements.txt
 set FLASK_APP=CALCULATOR
-set FLASK_DEBUG=development
+set FLASK_DEBUG=1
 
 ECHO Setting up database
 flask db init
