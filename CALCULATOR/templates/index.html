@@ -1,40 +1,44 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="card" style="width: 50rem;">
-    <div class="row mb-3 text-center">
-        <div class="card-header">
-            <div class="row row-cols-md-3 mb-3 text-center">
-                <div class="col-md-4 themed-grid-col">
-                    <label class="input-group-text" for="inputGroupSelect01">Process</label>
+<div class="card" style="width: 80rem;">
+    <div class="card-header">
+        <div class="row mb-4 g-3">   
+            <div class="input-group input-group-sm mb-3">
+                <label class="input-group-text" id="inputGroupSelect01">Process</label>
                     <select class="form-select" id="inputGroupSelect01">
-                    <option selected>Choose...</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                            <option selected>Choose...</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
                     </select>
+                </input>
+            </div>
+        </div>
+        <div class="row mb-4 g-3 align-items-center">
+            <div class="col-auto">
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="basic-addon3">Human Time</span>
+                    <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"></input>
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text">£</span>
+                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                    <span class="input-group-text">.00</span>
                 </div>
             </div>
-            <div class="row row-cols-md-3 mb-3 text-center">  
-                <div class="col-md-4 themed-grid-col">
-                    <label class="input-group-text" for="inputGroupSelect01">Human Time</label>
-                    <select class="form-select" id="inputGroupSelect01">
+        </div>
+        <div class="input-group input-group-sm mb-3">
+            <label class="input-group-text" id="inputGroupSelect01">Materials</label>
+            <select class="form-select" id="inputGroupSelect01">
                     <option selected>Choose...</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
-                    </select>
-                </div>
-            </div>
-            <div class="row row-cols-md-3 mb-3 text-center">
-                <div class="col-md-4 themed-grid-col">
-                    <label class="input-group-text" for="inputGroupSelect01">Packaging</label>
-                    <select class="form-select" id="inputGroupSelect01">
-                    <option selected>Choose...</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                    </select>
-                </div>
+            </select>
+        </div>
+        <div class="row mb-3 g-3">
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary">Save</button>
             </div>
         </div>
     </div>
