@@ -30,7 +30,7 @@ class Other_sql(db.Model):
 
 class Products_sql(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(120), nullable=False)
+    Name = db.Column(db.String(120),unique=True, nullable=False)
 
 """
 INIT DATABASE

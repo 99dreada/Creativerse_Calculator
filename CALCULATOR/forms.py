@@ -1,15 +1,12 @@
 from wtforms import (
-    Form,
-    IntegerField,
-    SelectField,
-    validators
+    StringField,
 )
-
-from flask_wtf import FlaskForm
 from CALCULATOR import app
+from wtforms_alchemy import ModelForm
 from CALCULATOR.model import (
     Products_sql
 )
 
-class Product_Calculator(FlaskForm):
-    model = Products_sql
+class Product_Calculator(ModelForm):
+    class Meta:
+        model = Products_sql
