@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
+
+{% from 'includes/_formhelpers.html' import render_field_grid %}
+
 {% block content %}
 <div class="card" style="width: 18rem;">
     <div class="card-header">
@@ -12,5 +15,10 @@
           <li><a class="dropdown-item" href="#">Something else here</a></li>
         </ul>
     </div>
-</div>   
+</div>
+<form method="POST" action="">
+    <fieldset class="form-group">
+      {{ render_field_grid(form.Name, class_="w-auto")}}
+    </fieldset>
+  </form>
 {% endblock %}
