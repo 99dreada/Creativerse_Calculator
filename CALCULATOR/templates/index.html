@@ -1,16 +1,42 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="card" style="width: 18rem;">
-    <div class="card-header">
-    <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Process
-        </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Buy to sell</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
+<div class="card" style="width: 50rem;">
+    <div class="row mb-3 text-center">
+        <div class="card-header">
+            <div class="row row-cols-md-3 mb-3 text-center">
+                <div class="col-md-4 themed-grid-col">
+                    <label class="input-group-text" for="inputGroupSelect01">Process</label>
+                    <select class="form-select" id="inputGroupSelect01">
+                    <option selected>Choose...</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row row-cols-md-3 mb-3 text-center">  
+                <div class="col-md-4 themed-grid-col">
+                    <label class="input-group-text" for="inputGroupSelect01">Human Time</label>
+                    <select class="form-select" id="inputGroupSelect01">
+                    <option selected>Choose...</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row row-cols-md-3 mb-3 text-center">
+                <div class="col-md-4 themed-grid-col">
+                    <label class="input-group-text" for="inputGroupSelect01">Packaging</label>
+                    <select class="form-select" id="inputGroupSelect01">
+                    <option selected>Choose...</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                    </select>
+                </div>
+            </div>
+        </div>
     </div>
-</div>   
+</div>
 {% endblock %}
