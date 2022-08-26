@@ -1,13 +1,21 @@
 from flask import(
     render_template,
+    request,
 )
 from CALCULATOR import app
 """from CALCULATOR.util import (
     retrieve_data,
 )"""
-@app.route('/')
+from CALCULATOR.forms import Product_Calculator
+
+@app.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('index.html')
+    form = Product_Calculator()
+    if request.method == 'GET':
+        pass
+    elif form.validate_on_submit():
+        print("worked")
+    return render_template('index.html',form=form)
 
 @app.route('/machines')
 def machines():
