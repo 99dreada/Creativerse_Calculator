@@ -50,7 +50,7 @@ TABLES_TO_SAVE = [
 
 def create_db():
     try: db.drop_all()
-    except: pass
+    except: pass # pragma: no cover
     db.create_all()
     import csv
     import os
