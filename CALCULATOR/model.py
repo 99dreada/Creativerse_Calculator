@@ -4,7 +4,7 @@ db = SQLAlchemy()
 
 class Process_sql(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(120), nullable=False)
+    Name = db.Column(db.String(20), unique=True, nullable=False)
 
 class Materials_sql(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -14,7 +14,7 @@ class Materials_sql(db.Model):
     quantity = db.Column(db.Integer, nullable=False)
     units = db.Column(db.Integer, nullable=False)
     cost = db.Column(db.Integer, nullable=False)
-    process_id =  db.Column(db.Integer, db.ForeignKey(Process_sql.id), nullable=False)
+    process_id = db.Column(db.Integer, db.ForeignKey(Process_sql.id), nullable=False)
 
 class Machines_sql(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -31,6 +31,7 @@ class Other_sql(db.Model):
 class Products_sql(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     Name = db.Column(db.String(120),unique=True, nullable=False)
+    Process_id = db.Column(db.Integer, db.ForeignKey(Process_sql.id), nullable=False)
 
 """
 INIT DATABASE

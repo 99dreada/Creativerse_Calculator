@@ -3,52 +3,64 @@
 {% from 'includes/_formhelpers.html' import render_field_grid %}
 
 {% block content %}
-<div class="card" style="width: 80rem;">
-    <div class="card-header">
-        <div class="row mb-4 g-3">   
-            <div class="input-group input-group-sm mb-3">
-                <label class="input-group-text" id="inputGroupSelect01">Process</label>
+<h1>{{ action_mode }} Product</h1>
+<form method="POST" action="">
+    <fieldset>
+        <div class="card" style="width: 80rem;">
+            <div class="card-header">
+                {{ render_field_grid(product_form.Name)}}
+                {{ render_field_grid(product_form.Process_id)}}
+            </div>
+        </div>
+    </fieldset>
+</form>
+
+<form method="POST" action="">
+    <fieldset>
+        THIS IS A BREAK
+        <div class="card" style="width: 80rem;">
+            <div class="card-header">
+                <div class="row mb-4 g-3">   
+                    <div class="input-group input-group-sm mb-3">
+                        <label class="input-group-text" id="inputGroupSelect01">Process</label>
+                            <select class="form-select" id="inputGroupSelect01">
+                                    <option selected>Choose...</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                            </select>
+                        </input>
+                    </div>
+                </div>
+                <div class="row mb-4 g-3 align-items-center">
+                    <div class="col-auto">
+                        <div class="input-group input-group-sm mb-3">
+                            <span class="input-group-text" id="basic-addon3">Human Time</span>
+                            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"></input>
+                        </div>
+                        <div class="input-group input-group-sm mb-3">
+                            <span class="input-group-text">£</span>
+                            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                            <span class="input-group-text">.00</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <label class="input-group-text" id="inputGroupSelect01">Materials</label>
                     <select class="form-select" id="inputGroupSelect01">
                             <option selected>Choose...</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>
                     </select>
-                </input>
-            </div>
-        </div>
-        <div class="row mb-4 g-3 align-items-center">
-            <div class="col-auto">
-                <div class="input-group input-group-sm mb-3">
-                    <span class="input-group-text" id="basic-addon3">Human Time</span>
-                    <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"></input>
                 </div>
-                <div class="input-group input-group-sm mb-3">
-                    <span class="input-group-text">£</span>
-                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-                    <span class="input-group-text">.00</span>
+                <div class="row mb-3 g-3">
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="input-group input-group-sm mb-3">
-            <label class="input-group-text" id="inputGroupSelect01">Materials</label>
-            <select class="form-select" id="inputGroupSelect01">
-                    <option selected>Choose...</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-            </select>
-        </div>
-        <div class="row mb-3 g-3">
-            <div class="col-auto">
-                <button type="submit" class="btn btn-primary">Save</button>
-            </div>
-        </div>
-    </div>
-</div>
-<form method="POST" action="">
-    <fieldset class="form-group">
-      {{ render_field_grid(form.Name, class_="w-auto")}}
     </fieldset>
-  </form>
+</form>
 {% endblock %}

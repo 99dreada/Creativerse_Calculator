@@ -3,20 +3,19 @@ from flask import(
     request,
 )
 from CALCULATOR import app
-"""from CALCULATOR.util import (
-    retrieve_data,
-)"""
-from CALCULATOR.util import dict_but
-from CALCULATOR.forms import Product_Calculator
+from CALCULATOR.util import(
+    dict_but,
+    create_forms,
+)
 
 @app.route('/', methods=['GET', 'POST'])
-def index():
-    form = Product_Calculator()
+@create_forms('product_form')
+def index(forms):
     if request.method == 'GET':
         pass
     elif form.validate_on_submit():
         print("worked")
-    return render_template('index.html',form=form)
+    return render_template('index.html', **forms)
 
 @app.route('/machines')
 def machines():
